@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <meta name="description" content="Put your description here.">
+    <title>RTP Database</title>
+</head>
+
+<body>
+    <svg display="none">
+    <symbol id="arrow" viewBox="0 0 12 12">
+        <g>
+            <path d="M1 11L11 1M11 1L2.62952 1.0778M11 1L10.9222 9.37048" />
+        </g>
+    </symbol>
+    <symbol id="linkedin" viewBox="0 0 20 20">
+        <g>
+            <path
+                d="M20 11.6592V19.0135H15.6951V12.1076C15.6951 10.4036 15.0673 9.23767 13.5426 9.23767C12.3767 9.23767 11.6592 10.0448 11.3901 10.7623C11.3004 11.0314 11.2108 11.3901 11.2108 11.8386V19.0135H6.90583C6.90583 19.0135 6.99551 7.35426 6.90583 6.18834H11.2108V7.98207C11.7489 7.08521 12.8251 5.8296 15.0673 5.8296C17.8475 5.8296 20 7.71301 20 11.6592ZM2.42152 0C0.986545 0 0 0.986547 0 2.24215C0 3.49776 0.89686 4.48431 2.33184 4.48431C3.8565 4.48431 4.75336 3.49776 4.75336 2.24215C4.84305 0.896861 3.94619 0 2.42152 0ZM0.269058 19.0135H4.57399V6.18834H0.269058V19.0135Z" />
+        </g>
+    </symbol>
+    <symbol id="x" viewBox="0 0 23 18">
+        <g>
+            <path
+                d="M22.154 2.13075C21.3206 2.49422 20.4393 2.73578 19.537 2.84799C20.4878 2.28393 21.1987 1.39076 21.5351 0.337665C20.6448 0.865672 19.6707 1.2375 18.655 1.43706C18.0323 0.772131 17.224 0.30986 16.3351 0.110302C15.4462 -0.0892566 14.5179 -0.0168772 13.6706 0.318036C12.8234 0.65295 12.0965 1.23492 11.5844 1.98833C11.0722 2.74173 10.7984 3.63176 10.7987 4.54277C10.7987 4.90277 10.8291 5.24893 10.9039 5.57847C9.09709 5.48988 7.32931 5.02095 5.71615 4.20231C4.10298 3.38368 2.68076 2.23379 1.54247 0.827822C0.959294 1.82732 0.779002 3.01153 1.03831 4.13929C1.29761 5.26706 1.97701 6.2536 2.93817 6.89802C2.21922 6.87873 1.51544 6.68688 0.88616 6.33863V6.38847C0.887364 7.43723 1.24985 8.45355 1.91261 9.26636C2.57536 10.0792 3.49791 10.6388 4.52495 10.8511C4.13641 10.9535 3.73597 11.0038 3.33418 11.0007C3.0456 11.0058 2.75732 10.9798 2.47432 10.9231C2.76778 11.8245 3.33347 12.6128 4.09349 13.1794C4.85352 13.746 5.77051 14.0631 6.7182 14.087C5.11056 15.3443 3.12783 16.0263 1.08693 16.0241C0.714466 16.0241 0.357233 16.0075 0 15.9618C2.07677 17.3001 4.49681 18.008 6.96743 17.9999C15.325 17.9999 19.8943 11.0768 19.8943 5.07585C19.8943 4.87508 19.8874 4.68123 19.8777 4.48877C20.7735 3.84767 21.5449 3.04859 22.154 2.13075Z" />
+        </g>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 12 22">
+        <g>
+            <path
+                d="M7.41572 22V11.9655H10.7825L11.2877 8.05372H7.41572V5.55662C7.41572 4.42442 7.72884 3.65284 9.35424 3.65284L11.4239 3.65199V0.153153C11.066 0.10664 9.83738 0 8.40739 0C5.42133 0 3.37702 1.82266 3.37702 5.1692V8.05372H0V11.9655H3.37702V22H7.41572Z" />
+        </g>
+    </symbol>
+    <symbol id="search" viewBox="0 0 19 19">
+        <g>
+            <path
+                d="M11.5748 14.8503C15.6492 14.8503 19 11.5376 19 7.42516C19 3.35084 15.6872 0 11.5748 0C7.46245 0 4.14968 3.31276 4.14968 7.42516C4.18776 11.5376 7.50053 14.8503 11.5748 14.8503ZM11.5748 1.10425C15.078 1.10425 17.9338 3.96008 17.9338 7.46324C17.9338 10.9664 15.078 13.8222 11.5748 13.8222C8.07169 13.8222 5.21586 10.9664 5.21586 7.46324C5.25394 3.96008 8.10977 1.10425 11.5748 1.10425Z" />
+            <path d="M1.67464 18.163L6.85321 13.0225L6.0155 12.1848L0.875007 17.3634L1.67464 18.163Z" />
+        </g>
+    </symbol>
+    <symbol id="hash" width="15" height="15" viewBox="0 0 15 15">
+        <g>
+            <path d="M4.5 6H10.5" stroke="#838590" stroke-width="0.75" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4.5 8.25H10.5" stroke="#838590" stroke-width="0.75" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M6.75 3.75L6 10.5" stroke="#838590" stroke-width="0.75" stroke-linecap="round"
+                stroke-linejoin="round" />
+            <path d="M9 3.75L8.25 10.5" stroke="#838590" stroke-width="0.75" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </g>
+    </symbol>
+    <symbol id="arrow-btn" viewBox="0 0 8 11">
+        <g>
+            <path
+                d="M4.5 1V0.5L3.5 0.5V1L4.5 1ZM3.64645 10.3536C3.84171 10.5488 4.15829 10.5488 4.35355 10.3536L7.53553 7.17157C7.7308 6.97631 7.7308 6.65973 7.53553 6.46447C7.34027 6.2692 7.02369 6.2692 6.82843 6.46447L4 9.29289L1.17157 6.46447C0.976311 6.2692 0.659728 6.2692 0.464466 6.46447C0.269204 6.65973 0.269204 6.97631 0.464466 7.17157L3.64645 10.3536ZM3.5 1L3.5 10H4.5L4.5 1L3.5 1Z"
+                fill="#838590" />
+        </g>
+    </symbol>
+    <symbol id="star" viewBox="0 0 16 15">
+        <g>
+            <path
+                d="M8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0Z"
+                fill="#FFC225" />
+        </g>
+    </symbol>
+</svg>
+    <div class="wrapper">
+        <header class="header">
+    <div class="header__main main-header">
+        <div class="main-header__container container">
+            <div class="main-header__row">
+                <div class="main-header__column">
+                    <a href="" aria-label="Put your description here." target="_blank" class="main-header__logo">
+                        <img src="img/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="main-header__column">
+                    <nav class="main-header__menu menu-main-header" data-da="mobile-header__body, 1, 768.98">
+                        <ul class="menu-main-header__list">
+                            <li class="menu-main-header__item">
+                                <a href="" aria-label="Put your description here." target="_blank"
+                                    class="menu-main-header__link">
+                                    RTP Database
+                                </a>
+                            </li>
+                            <li class="menu-main-header__item">
+                                <a href="" aria-label="Put your description here." target="_blank"
+                                    class="menu-main-header__link">
+                                    About Us
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="main-header__dropdown dropdown lang">
+                        <button class='dropdown__button button-dropdown'>
+                            <span class="button-dropdown__icon">
+                                <img src="img/icons/lang.svg" alt="lang">
+                            </span>
+                            <span class="button-dropdown__text">
+                                EN
+                            </span>
+                            <span class="button-dropdown__arrow">
+                                <img src="img/icons/arrow.svg" alt="arrow">
+                            </span>
+                        </button>
+                        <div class="dropdown__body">
+                            <ul class="dropdown__list">
+                                <li class="dropdown__list-item" data-dropdown="EN">English</li>
+                                <li class="dropdown__list-item" data-dropdown="AR">العربية</li>
+                                <li class="dropdown__list-item" data-dropdown="BG">български</li>
+                                <li class="dropdown__list-item" data-dropdown="CS">Čeština</li>
+                                <li class="dropdown__list-item" data-dropdown="DA">Dansk</li>
+                                <li class="dropdown__list-item" data-dropdown="DE">Deutsch</li>
+                                <li class="dropdown__list-item" data-dropdown="EL">Ελληνικά</li>
+                                <li class="dropdown__list-item" data-dropdown="ES">Español</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="header__burger">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__mobile mobile-header">
+        <div class="mobile-header__container container">
+            <div class="mobile-header__body"></div>
+        </div>
+    </div>
+</header>
+        <main class="rtp">
+            <div class="rtp__game-casinos game-casinos-rtp">
+                <div class="game-casinos-rtp__container container">
+                    <div class="game-casinos-rtp__slider slider-game-casinos-rtp">
+                        <div class="slider-game-casinos-rtp__swiper swiper">
+                            <div class="slider-game-casinos-rtp__wrapper swiper-wrapper">
+                                <div
+                                    class="slider-game-casinos-rtp__slide slide-slider-game-casinos-rtp slide-slider-game-casinos-rtp_1 swiper-slide">
+                                    <div class="slide-slider-game-casinos-rtp__body body-slide-slider-game-casinos-rtp">
+                                        <div class="body-slide-slider-game-casinos-rtp__title">
+                                            Hottest Slots Right Now
+                                        </div>
+                                        <div
+                                            class="body-slide-slider-game-casinos-rtp__items items-slide-slider-game-casinos-rtp">
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">1</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="GoldBlit">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">GoldBlit</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">Evolution
+                                                    </div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__rtp">97,36%</div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">2</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="Render Token">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">Render
+                                                            Token</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">Netent
+                                                    </div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__rtp">96,31%</div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">3</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="Terra Classic">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">Terra
+                                                            Classic</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">Yggdrasill
+                                                    </div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__rtp">97,01%</div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="slider-game-casinos-rtp__slide slide-slider-game-casinos-rtp slide-slider-game-casinos-rtp_2 swiper-slide">
+                                    <div class="slide-slider-game-casinos-rtp__body body-slide-slider-game-casinos-rtp">
+                                        <div class="body-slide-slider-game-casinos-rtp__title">
+                                            Safest Online Casinos
+                                        </div>
+                                        <div
+                                            class="body-slide-slider-game-casinos-rtp__items items-slide-slider-game-casinos-rtp">
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">1</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/03.svg" alt="Vavada Casino">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">Vavada
+                                                            Casino</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">
+                                                        Safety index
+                                                        <span class="item-slide-slider-game-casinos-rtp__provider-star">
+                                                            <svg>
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span
+                                                            class="item-slide-slider-game-casinos-rtp__provider-number">
+                                                            9.2
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">2</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/04.svg" alt="1xBet">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">1xBet</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">
+                                                        Safety index
+                                                        <span class="item-slide-slider-game-casinos-rtp__provider-star">
+                                                            <svg>
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span
+                                                            class="item-slide-slider-game-casinos-rtp__provider-number">
+                                                            9.2
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">3</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/07.svg" alt="1Win">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">1Win</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__provider">
+                                                        Safety index
+                                                        <span class="item-slide-slider-game-casinos-rtp__provider-star">
+                                                            <svg>
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </span>
+                                                        <span
+                                                            class="item-slide-slider-game-casinos-rtp__provider-number">
+                                                            9.2
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Play</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="slider-game-casinos-rtp__slide slide-slider-game-casinos-rtp slide-slider-game-casinos-rtp_3 swiper-slide">
+                                    <div class="slide-slider-game-casinos-rtp__body body-slide-slider-game-casinos-rtp">
+                                        <div class="body-slide-slider-game-casinos-rtp__title">
+                                            Hottest Slots Right Now
+                                        </div>
+                                        <div
+                                            class="body-slide-slider-game-casinos-rtp__items items-slide-slider-game-casinos-rtp">
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">1</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="500 $ up to 200%">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">500 $
+                                                            up to 200%</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">2</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="100% up to 50 £ + 10 FS">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">100%
+                                                            up to 50 £ + 10 FS</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="items-slide-slider-game-casinos-rtp__item item-slide-slider-game-casinos-rtp">
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <div class="item-slide-slider-game-casinos-rtp__number">3</div>
+                                                    <div class="item-slide-slider-game-casinos-rtp__casino">
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-img">
+                                                            <img src="img/slotes/01.svg" alt="100% up to 25 £ + 20 FS">
+                                                        </a>
+                                                        <a href="" aria-label="Put your description here."
+                                                            target="_blank"
+                                                            class="item-slide-slider-game-casinos-rtp__casino-name">100%
+                                                            up to 25 £ + 20 FS</a>
+                                                    </div>
+                                                </div>
+                                                <div class="item-slide-slider-game-casinos-rtp__column">
+                                                    <a href="" aria-label="Put your description here." target="_blank"
+                                                        class="item-slide-slider-game-casinos-rtp__btn">Claim</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rtp__slotes slotes-rtp">
+                <div class="slotes-rtp__container container">
+                    <form action="#" class="slotes-rtp__form form-slotes-rtp">
+                        <div class="form-slotes-rtp__item">
+                            <span class="form-slotes-rtp__icon form-slotes-rtp__icon_search">
+                                <svg>
+                                    <use xlink:href="#search"></use>
+                                </svg>
+                            </span>
+                            <input placeholder="Try Gates of Olympus or Pragmatic" autocomplete='off' type='text'
+                                name='form[]' class='form-slotes-rtp__input form-slotes-rtp__input_search'>
+                        </div>
+                    </form>
+                    <table class="slotes-rtp__table table-slotes-rtp">
+                        <thead class="table-slotes-rtp__head head-table-slotes-rtp">
+                            <tr class="head-table-slotes-rtp__row">
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#hash"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <span>
+                                            Slote
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <span>
+                                            Variance
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <button class="head-table-slotes-rtp__btn">
+                                            <span>RTP</span>
+                                            <svg>
+                                                <use xlink:href="#arrow-btn"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <button class="head-table-slotes-rtp__btn">
+                                            <span>Provider</span>
+                                            <svg>
+                                                <use xlink:href="#arrow-btn"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <span>
+                                            Rating
+                                        </span>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <button class="head-table-slotes-rtp__btn">
+                                            <span>Max Win</span>
+                                            <svg>
+                                                <use xlink:href="#arrow-btn"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <button class="head-table-slotes-rtp__btn">
+                                            <span>Min Bet</span>
+                                            <svg>
+                                                <use xlink:href="#arrow-btn"></use>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </th>
+                                <th class="head-table-slotes-rtp__column">
+                                    <div>
+                                        <span>
+                                            Play
+                                        </span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-slotes-rtp__body body-table-slotes-rtp">
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">1</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/01.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_low">Low</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X10000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/02.svg" alt="Render Token">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Render Token
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">93,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Netent</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X5000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">3</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/03.svg" alt="Metatime">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Metatime
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_high">high</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,33 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Yggdrasill</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X3000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">4</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/04.svg" alt="Terra Classic">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Terra Classic
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_low">Low</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">91,1 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X500</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">5</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/05.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Netent</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X10</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">6</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/06.svg" alt="Eldarune">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Eldarune
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_high">high</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">7</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/07.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_low">Low</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Netent</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X50000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">8</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/02.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X100</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">9</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/06.svg" alt="Metatime">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Metatime
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">91,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X500</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">10</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/05.svg" alt="Terra Classic">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Terra Classic
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_high">high</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">90,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Yggdrasill</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X50000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">11</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/03.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_low">Low</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">92,22 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Yggdrasill</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X1000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">12</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/06.svg" alt="Metatime">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Metatime
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_high">high</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,2 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Netent</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X500</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">13</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/04.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">95,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Evolution</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X10000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">14</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/07.svg" alt="Terra Classic">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Terra Classic
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_high">high</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">96,35 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Netent</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X10000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr class="body-table-slotes-rtp__row">
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__num">15</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <div class="body-table-slotes-rtp__slote slote-body-table-slotes-rtp">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__img">
+                                            <img src="img/slotes/06.svg" alt="Gold Blitz">
+                                        </a>
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="slote-body-table-slotes-rtp__name">
+                                            Gold Blitz
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span
+                                        class="body-table-slotes-rtp__variance body-table-slotes-rtp__variance_medium">Medium</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rtp">91,31 %</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__provider">Yggdrasill</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__rating">
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                        <span>
+                                            <svg>
+                                                <use xlink:href="#star"></use>
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__x">X10000</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__min-bet">0.2</span>
+                                </td>
+                                <td class="body-table-slotes-rtp__column">
+                                    <span class="body-table-slotes-rtp__play">
+                                        <a href="" aria-label="Put your description here." target="_blank"
+                                            class="body-table-slotes-rtp__play-btn">Play now</a>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="slotes-rtp__dropdown-block">
+                        <div class="slotes-rtp__dropdown-text">Show rows</div>
+                        <div class="slotes-rtp__dropdown dropdown">
+                            <button class='dropdown__button button-dropdown'>
+                                <span class="button-dropdown__text">
+                                    50
+                                </span>
+                                <span class="button-dropdown__arrow">
+                                    <img src="img/icons/arrow.svg" alt="arrow">
+                                </span>
+                            </button>
+                            <div class="dropdown__body">
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__list-item" data-dropdown="50">50</li>
+                                    <li class="dropdown__list-item" data-dropdown="20">20</li>
+                                    <li class="dropdown__list-item" data-dropdown="10">10</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slotes-rtp__bottom">
+                        <a href="" class="slotes-rtp__btn slotes-rtp__btn_more">Show More</a>
+                        <div class="slotes-rtp__navigation navigation-slotes-rtp">
+                            <div class="navigation-slotes-rtp__pagination slider-pagination">
+                                <div class="slider-pagination__items">
+                                    <a href="" class="slider-pagination__item active">1</a>
+                                    <a href="" class="slider-pagination__item">2</a>
+                                    <a href="" class="slider-pagination__item">3</a>
+                                    <a href="" class="slider-pagination__item">4</a>
+                                    <a href="" class="slider-pagination__item">5</a>
+                                    <a href="" class="slider-pagination__item">...</a>
+                                    <a href="" class="slider-pagination__item">120</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="rtp__info info-rtp">
+                <div class="info-rtp__container container">
+                    <div class="info-rtp__main main-info-rtp">
+                        <h1 class="main-info-rtp__title">With this knowledge in mind, investors</h1>
+                        <div class="main-info-rtp__row">
+                            <div class="main-info-rtp__column">
+                                <div class="main-info-rtp__text text">
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe. It’s no <span>wonder investors</span> are
+                                        putting their
+                                        money in safe havens.
+                                    </p>
+                                    <p>
+                                        But all is not lost. The upside is that the current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. <span>With this knowledge
+                                            in
+                                            mind,</span> investors are better placed to act accordingly.
+                                    </p>
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe. It’s no wonder investors are putting their
+                                        money in safe <span>havens.</span> But all is not lost. The upside is that the
+                                        current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. With this knowledge in
+                                        mind, investors are better placed to act accordingly.
+                                    </p>
+                                    <p>
+                                        But all is not lost. The upside is that the current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. <span>With this knowledge
+                                            in
+                                            mind,</span> investors are better placed to act accordingly. But all is not
+                                        lost. The
+                                        upside is that the current negative externalities are “known unknowns”. We may
+                                        not know exactly how things will unfold; but we’re able to put good reasons
+                                        behind the current market malaise. With this knowledge in mind, investors are
+                                        better placed to act accordingly.
+                                    </p>
+                                    <p>
+                                        But all is not lost. The upside is that the current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. With this knowledge in
+                                        mind, investors are better placed to act accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="main-info-rtp__column">
+                                <div class="main-info-rtp__image-block">
+                                    <div class="main-info-rtp__image ibg">
+                                        <img src="img/schedule.svg" alt="schedule">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-rtp__additionally additionally-info-rtp">
+                        <h2 class="additionally-info-rtp__title">Find for the best ico companies on our service!</h2>
+                        <div class="additionally-info-rtp__text text">
+                            <p>
+                                But all is not lost. The upside is that the current negative externalities are “known
+                                unknowns”. We may not know exactly how things will unfold; but we’re able to put good
+                                reasons behind the current market malaise. With this knowledge in mind, investors are
+                                better placed to act accordingly.
+                            </p>
+                            <p>
+                                Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are down as
+                                the world goes through a turbulent period. Countries are still recovering from the COVID
+                                pandemic, inflation affects major economies and conflict looms in Eastern Europe. It’s
+                                no wonder investors are putting their money in safe havens. But all is not lost. The
+                                upside is that the current negative externalities are “known unknowns”. We may not know
+                                exactly how things will unfold; but we’re able to put good reasons behind the current
+                                market malaise. With this knowledge in mind, investors are better placed to act
+                                accordingly.
+                            </p>
+                            <p>
+                                Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are down as
+                                the world goes through a turbulent period. Countries are still recovering from the COVID
+                                pandemic, inflation affects major economies and conflict looms in Eastern Europe. It’s
+                                no wonder investors are putting their money in safe havens. But all is not lost. The
+                                upside is that the current negative externalities are “known unknowns”. We may not know
+                                exactly how things will unfold; but we’re able to put good reasons behind the current
+                                market malaise. With this knowledge in mind, investors are better placed to act
+                                accordingly.
+                            </p>
+                            <p>
+                                Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are down as
+                                the world goes through a turbulent period. Countries are still recovering from the COVID
+                                pandemic, inflation affects major economies and conflict looms in Eastern Europe. It’s
+                                no wonder investors are putting their money in safe havens.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rtp__video video-rtp">
+                <div class="video-rtp__container container">
+                    <div class="video-rtp__body">
+                        <h2 class="video-rtp__title">RTP Database video</h2>
+                        <div class="video-rtp__content">
+                            <iframe src="https://www.youtube.com/embed/2gAAQ8YpKL4?si=f8lw7SShGvafZTkr&amp;controls=0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-rtp__description">
+                            Short description for the image, now a random text is inserted
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rtp__faqs faqs-rtp">
+                <div class="faqs-rtp__container container">
+                    <div class="faqs-rtp__row">
+                        <h2 class="faqs-rtp__title">FAQs</h2>
+                        <div class="faqs-rtp__items">
+                            <div class="faqs-rtp__item item-faqs-rtp">
+                                <div class="item-faqs-rtp__top top-item-faqs-rtp">
+                                    <span class="top-item-faqs-rtp__number">01.</span>
+                                    <span class="top-item-faqs-rtp__text">
+                                        BTC price of 100,000 $ this halving cycle?
+                                    </span>
+                                </div>
+                                <div class="item-faqs-rtp__text text">
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe. It’s no wonder investors are putting their
+                                        money in safe <span>havens</span>.
+                                    </p>
+                                    <p>
+                                        But all is not lost. The upside is that the current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. With this knowledge in
+                                        mind, investors are better placed to act accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faqs-rtp__item item-faqs-rtp">
+                                <div class="item-faqs-rtp__top top-item-faqs-rtp">
+                                    <span class="top-item-faqs-rtp__number">02.</span>
+                                    <span class="top-item-faqs-rtp__text">
+                                        BTC price of 100,000 $ this halving cycle, but May’s about-turn gave its
+                                        time-tested precision a run for its money?
+                                    </span>
+                                </div>
+                                <div class="item-faqs-rtp__text text">
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe. It’s no wonder investors are putting their
+                                        money in safe <span>havens</span>. But all is not lost. The upside is that the
+                                        current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. With this knowledge in
+                                        mind, investors are better placed to act accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faqs-rtp__item item-faqs-rtp">
+                                <div class="item-faqs-rtp__top top-item-faqs-rtp">
+                                    <span class="top-item-faqs-rtp__number">03.</span>
+                                    <span class="top-item-faqs-rtp__text">
+                                        price of 100,000 $ this halving cycle?
+                                    </span>
+                                </div>
+                                <div class="item-faqs-rtp__text text">
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe. It’s no wonder investors are putting their
+                                        money in safe havens.
+                                    </p>
+                                    <p>
+                                        But all is not lost. The upside is that the current negative externalities are
+                                        “known unknowns”. We may not know exactly how things will unfold; but we’re able
+                                        to put good reasons behind the current market malaise. With this knowledge in
+                                        mind, investors are better placed to act accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="faqs-rtp__item item-faqs-rtp">
+                                <div class="item-faqs-rtp__top top-item-faqs-rtp">
+                                    <span class="top-item-faqs-rtp__number">04.</span>
+                                    <span class="top-item-faqs-rtp__text">
+                                        May’s about-turn gave its time-tested precision a run for its money?
+                                    </span>
+                                </div>
+                                <div class="item-faqs-rtp__text text">
+                                    <p>
+                                        Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are
+                                        down as the world goes through a turbulent period. Countries are still
+                                        recovering from the COVID pandemic, inflation affects major economies and
+                                        conflict looms in Eastern Europe.
+                                    </p>
+                                    <p>
+                                        It’s no wonder investors are putting their money in safe havens. But all is not
+                                        lost. The upside is that the current negative externalities are “known
+                                        unknowns”.
+                                    </p>
+                                    <p>
+                                        We may not know exactly how things will unfold; but we’re able to put good
+                                        reasons behind the current market malaise. With this knowledge in mind,
+                                        investors are better placed to act accordingly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rtp__about about-rtp">
+                <div class="about-rtp__container container">
+                    <div class="about-rtp__row">
+                        <div class="about-rtp__image-block">
+                            <div class="about-rtp__image ibg">
+                                <img src="img/harry.jpg" alt="harry styles">
+                            </div>
+                        </div>
+                        <div class="about-rtp__content">
+                            <div class="about-rtp__top">
+                                <div class="about-rtp__info info-about-rtp">
+                                    <div class="info-about-rtp__label">Article by</div>
+                                    <div class="info-about-rtp__name">Harry Styles</div>
+                                </div>
+                                <div class="about-rtp__socials socials">
+                                    <div class="socials__title">Follow me:</div>
+                                    <div class="socials__items">
+                                        <div class="socials__item">
+                                            <a href="" aria-label="Put your description here." target="_blank"
+                                                class="socials__link socials__link_linkedin">
+                                                <svg>
+                                                    <use xlink:href="#linkedin"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="socials__item">
+                                            <a href="" aria-label="Put your description here." target="_blank"
+                                                class="socials__link socials__link_x">
+                                                <svg>
+                                                    <use xlink:href="#x"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                        <div class="socials__item">
+                                            <a href="" aria-label="Put your description here." target="_blank"
+                                                class="socials__link socials__link_facebook">
+                                                <svg>
+                                                    <use xlink:href="#facebook"></use>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="about-rtp__text text">
+                                <p>
+                                    Cryptocurrencies do not exist in a vacuum. So it’s no surprise that markets are down
+                                    as the world goes through a turbulent period. Countries are still recovering from
+                                    the COVID pandemic, inflation affects major economies and conflict looms in Eastern
+                                    Europe. It’s no wonder investors are putting their money in safe havens. But all is
+                                    not lost. The upside is that the current negative externalities are “known
+                                    unknowns”. We may not know exactly how things will unfold; but we’re able to put
+                                    good reasons behind the current market malaise. With this knowledge in mind,
+                                    investors are better placed to act accordingly.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__top top-footer">
+            <div class="top-footer__logos logos-top-footer">
+                <div class="logos-top-footer__text">PLAY RESPONSIBLY AND IN MODERATION</div>
+                <div class="logos-top-footer__items">
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/01.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/02.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/03.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/04.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/05.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/06.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/07.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/08.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/09.svg" alt="logo">
+                        </div>
+                    </div>
+                    <div class="logos-top-footer__column">
+                        <div class="logos-top-footer__item">
+                            <img src="img/logos/10.svg" alt="logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-footer__text">
+                <p>
+                    Casino.guru is an independent source of information about online casinos and online casino games,
+                    not controlled by any gambling operator. All our reviews and guides are created honestly, according
+                    to the best knowledge and judgement of the members of our independent expert team; however, they are
+                    intended for informative purposes only and should not be construed as, nor relied upon as, legal
+                    advice. You should always make sure that you meet all regulatory requirements before playing in any
+                    selected casino. Cryptonaute.fr provides top quality information through financial educational
+                    guides and video tutorials on how to buy stocks and invest in the stock market. We compare top
+                    vendors along with in-depth insights into their product offerings. We do not advise or recommend any
+                    vendor, but we are here to enable our reader to make informed decisions on their own responsibility.
+                    Contracts for Difference (“CFDs») are leveraged products and involve significant risk of loss to
+                    your capital. Up to 67% of retail investor accounts lose money when trading with brokers on this
+                    site. Please ensure you fully understand the risks and seek advice from independent professionals.
+                    By continuing to use this website, you agree to our privacy policy.
+                </p>
+            </div>
+        </div>
+        <div class="footer__bottom bottom-footer">
+            <div class="bottom-footer__copyright">2024 © RTPDatabase</div>
+            <a href="" aria-label="Put your description here." target="_blank"
+                class="menu-bottom-footer__link">Responsible Gambling</a>
+            <a href="" aria-label="Put your description here." target="_blank" class="menu-bottom-footer__link">Terms &
+                Conditions</a>
+            <a href="" aria-label="Put your description here." target="_blank" class="menu-bottom-footer__link">Privacy
+                Policy</a>
+            <a href="mailto:info@site.com" aria-label="Put your description here." target="_blank"
+                class="bottom-footer__email" data-da="mobile-header__body, 0, 480.98">info@site.com</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>
