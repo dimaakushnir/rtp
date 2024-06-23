@@ -528,15 +528,14 @@ h2 {
     padding: 0;
   }
 }
-.main-header__logo {
-  flex: 0 0 128px;
-}
 .main-header__logo img {
-  width: 100%;
+  width: 128px;
+  height: 29px;
 }
 @media (max-width: 768.98px) {
-  .main-header__logo {
-    flex: 0 0 134px;
+  .main-header__logo img {
+    width: 134px;
+    height: 30px;
   }
 }
 .main-header__dropdown {
@@ -551,9 +550,6 @@ h2 {
     width: 50px;
     transform: translate(-55px, -13.5px);
   }
-}
-.main-header__dropdown .button-dropdown {
-  height: 32px;
 }
 
 @media (max-width: 480.98px) {
